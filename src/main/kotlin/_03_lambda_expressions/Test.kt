@@ -13,6 +13,16 @@ val show = { message: String, newLine: Boolean -> // (String, Boolean) -> Unit
     else
         print(message)
 }
+val isPrime: (Int) -> Boolean = {
+    var flag = true
+
+    for (i in 2 until it)
+        if (it.rem(i) == 0)
+            flag = false
+
+    flag
+}
+
 
 fun main() {
     var a = 3
@@ -30,5 +40,11 @@ fun main() {
 
     show("Bonjour ", false)
     show("kotlin", true)
-    show("-------", false)
+    show("-------", true)
+
+    var n = 15
+    println("$n is prime: ${isPrime(n)}")
+
+    n = 11
+    println("$n is prime: ${isPrime(n)}")
 }
