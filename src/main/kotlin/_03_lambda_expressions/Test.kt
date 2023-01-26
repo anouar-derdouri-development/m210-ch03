@@ -1,6 +1,11 @@
 package _03_lambda_expressions
 
-val sum: (Int, Int) -> Int = { x: Int, y: Int -> x + y }
+typealias Type1 = (Int, Int) -> Int
+typealias TripleOfDBS = Triple<Double, Boolean, String>
+typealias NewPair = Pair<Int, TripleOfDBS>
+typealias ListofNewPairs = List<NewPair>
+
+val sum: Type1 = { x: Int, y: Int -> x + y }
 val prod = { x: Int, y: Int -> x * y }
 val printProd = { x: Int, y: Int -> print(x * y) }
 val printSum = { x: Int, y: Int ->
@@ -47,4 +52,29 @@ fun main() {
 
     n = 11
     println("$n is prime: ${isPrime(n)}")
+
+    var x: NewPair = Pair(1, Triple(1.2, false, "kotlin"))
+    var y: NewPair = Pair(2, Triple(0.5, true, "java"))
+
+    var l: ListofNewPairs = listOf(x, y)
+
+    printListOfNewPairs(l)
+}
+
+fun printListOfNewPairs(l: ListofNewPairs) {
+    for (item in l) {
+        printNewPair(item)
+    }
+}
+
+fun printNewPair(pair: NewPair) {
+    print("First: ${pair.first} - ")
+    print("Second:")
+    printTripleOfDBS(pair.second)
+
+    println()
+}
+
+fun printTripleOfDBS(triple: TripleOfDBS) {
+    print("${triple.first} | ${triple.second}  | ${triple.third} ")
 }
