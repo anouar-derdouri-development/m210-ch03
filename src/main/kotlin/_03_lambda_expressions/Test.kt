@@ -7,6 +7,12 @@ val printSum = { x: Int, y: Int ->
     val s = x + y
     print(s)
 }
+val show = { message: String, newLine: Boolean -> // (String, Boolean) -> Unit
+    if (newLine)
+        println(message)
+    else
+        print(message)
+}
 
 fun main() {
     var a = 3
@@ -21,4 +27,8 @@ fun main() {
     print("$a + $b = ")
     printSum(a, b)
     println()
+
+    show("Bonjour ", false)
+    show("kotlin", true)
+    show("-------", false)
 }
