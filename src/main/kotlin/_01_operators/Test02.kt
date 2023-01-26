@@ -1,4 +1,4 @@
-package _01_Operators
+package _01_operators
 
 fun main() {
     var a = (1 != 2)
