@@ -1,6 +1,6 @@
 package _04_anonymous_function
 
-val sum = fun(x: Int, y: Int): Int = x + y
+val sum = fun(x: Int, y: Int): Int = x + y // Type inference val sum = fun(x: Int, y: Int) = x + y
 val diff = fun(x: Int, y: Int): Int {
     return x - y
 }
