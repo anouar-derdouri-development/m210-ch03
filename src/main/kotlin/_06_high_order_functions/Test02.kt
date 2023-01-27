@@ -41,4 +41,21 @@ fun main() {
     s = "salam"
     newS = returnNewString(s, String::uppercase)
     println(newS)
+
+    s = "salam"
+    newS = returnNewString(s, { str: String -> str.substring(0, str.length / 2) })
+    println(newS)
+
+    s = "salama"
+    newS = returnNewString(s, { it.substring(0, it.length / 2) })
+    println(newS)
+
+    s = "salama"
+    newS = returnNewString(s) { it.substring(0, it.length / 2) }
+    println(newS)
+
+    s = "bonJOUR"
+    s.let {
+        println(it)
+    }
 }
