@@ -1,17 +1,16 @@
 package _08_lambda_vs_anonymous
 
 
-
 fun main() {
     val strings = listOf("kotlin", "is", "an", "awesome", "programming", "language")
 
-    println(strings)
-
     // Lambda expression
     println(strings.map {
+//        M1
         it.uppercase()
 
-        return
+//        M2
+        return@map it.uppercase()
     })
 
     // Anonymous function
@@ -20,6 +19,6 @@ fun main() {
     }))
 
     // Anonymous function
-    println(strings.map(fun(s: String): String = s.uppercase()
-    ))
+//    println(strings.map(fun(s: String): String = s.uppercase()
+//    ))
 }
